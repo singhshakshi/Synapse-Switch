@@ -3,6 +3,7 @@ import { useGameState } from './hooks/useGameState';
 import GameBoard from './components/GameBoard';
 import HUD from './components/HUD';
 import GameOverlay from './components/GameOverlay';
+import MobileControls from './components/MobileControls';
 import { WORLD_STATES } from './constants';
 
 function App() {
@@ -85,8 +86,10 @@ function App() {
                     />
                 </div>
 
+                <MobileControls onMove={movePlayer} />
+
                 {/* Controls Hint */}
-                <div className={`mt-8 text-sm font-medium transition-colors duration-300
+                <div className={`mt-8 text-sm font-medium transition-colors duration-300 hidden md:block
           ${isLight ? 'text-gray-400' : 'text-purple-400/50'}`}>
                     Use <span className="font-bold border px-1 rounded mx-1 border-current">Arrow Keys</span> or <span className="font-bold border px-1 rounded mx-1 border-current">WASD</span> to move • Each move flips reality
                 </div>
